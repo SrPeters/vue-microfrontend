@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>This is the root App!</h1>
-    <div class="margem">
+    <div class="todo-container">
       <TodoList></TodoList>
     </div>
   </div>
@@ -12,7 +12,7 @@
 </script>
 
 <style scoped>
-.margem {
+.todo-container {
   margin-top: 50px;
   display: flex;
   justify-content: center;

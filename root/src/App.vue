@@ -7,14 +7,37 @@
         <RouterLink :to="{name: 'Remote'}">Remote App</RouterLink>
       </div>
       <RouterView/>
+      <div class="mt text-center" v-show="$route.name === 'Remote'">
+        <div class="root-label mb">State changing on Root</div>
+        <h2 class="mb">{{ store.userName }}</h2>
+        <button class="btn" @click="() => {
+          store.setUserName('Pedro Camaforte')
+        }">Click</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useExampleStore } from './stores/exampleStore'
+
+const store = useExampleStore()
+
 </script>
 
 <style>
+.text-center {
+  text-align: center;
+}
+
+.mb {
+  margin-bottom: 12px;
+}
+
+.mt {
+  margin-top: 50px;
+}
+
 .mr {
   margin-right: 40px;
 }
@@ -46,5 +69,16 @@
   border: 2px dashed rgb(163, 91, 91);
   padding: 8px 12px;
   width: fit-content;
+}
+
+.btn {
+  background-color: rgb(226, 43, 113);
+  color: white;
+  border: none;
+}
+
+.btn:focus, .btn:active {
+  border: none;
+  outline: none;
 }
 </style>

@@ -7,7 +7,7 @@
     </div>
     <ol>
       <li class="li" v-for="i, key in state.items" :key="key">
-        <div>{{ i }} <button @click="deleteItem(key)" class="delete">x</button></div>
+        <div>{{ i }} <button @click="deleteItem(key)" class="delete"><div class="m4px">x</div></button></div>
       </li>
     </ol>
   </div>
@@ -81,11 +81,24 @@ function deleteItem(key:number) {
   border: none;
   border-radius: 50%;
   font-weight: bold;
-  padding: 2px 6px;
+  padding: 2px 8px;
   background-color: rgb(240, 240, 240);
   color: rgb(75, 75, 75);
   cursor: pointer;
   margin-left: 10px;
+}
+
+.delete {
+  line-height: 1em !important;
+}
+
+.delete:active, .delete:focus {
+  border: none;
+  outline: none;
+}
+
+.m4px {
+  margin-bottom: 4px;
 }
 
 .li {
